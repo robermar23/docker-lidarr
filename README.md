@@ -241,3 +241,6 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 * **17.03.18:** - Add ENV XDG_CONFIG_HOME="/config/xdg" to Dockerfile for signalr fix.
 * **27.02.18:** - Use json to query for new version.
 * **23.02.18:** - Initial Release.
+
+docker build -t robermar2/lidarr:armv7 . -f Dockerfile.armhf
+docker push robermar2/lidarr:armv7
