@@ -1,19 +1,11 @@
 #!/usr/bin/with-contenv bash
 
-if [ -f /mount-config/win-credentials.ini ]; then
-  if [ ! -d /mnt/remote-movies ]; then
-    echo 'Create directory /mnt/remote-movies'
-    mkdir /mnt/remote-movies
-  fi
-
-  if [ ! -d /mnt/remote-music ]; then
+#if [ -f /mount-config/win-credentials.ini ]; then
+  if [ ! -d /mnt/tv2 ]; then
     echo 'Create directory /mnt/remote-music'
     mkdir /mnt/remote-music
   fi
 
-  echo 'mounting /mnt/remote-movies'
-  mount -v -t cifs -o noperm,credentials=/mount-config/win-credentials.ini //192.168.68.132/Plex /mnt/remote-movies
-
   echo 'mounting /mnt/remote-music'
-  mount -v -t cifs -o noperm,credentials=/mount-config/win-credentials.ini //192.168.68.132/Music /mnt/remote-music
-fi
+  mount -v -t nfs4 '//192.168.68.163/mnt/user/media' /mnt/remote-music
+#fi

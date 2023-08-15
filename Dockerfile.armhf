@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-ubuntu:bionic
+FROM lsiobase/mono:arm32v7-LTS
 
 # set version label
 ARG BUILD_DATE
@@ -8,11 +8,11 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 LABEL maintainer="thelamer"
 
 #CIFS for mounting windows shared
-RUN \
-	echo '**** install cifs ****' && \
-	apt-get update && \
-	apt-get install -y \
-		cifs-utils
+# RUN \
+# 	echo '**** install cifs ****' && \
+# 	apt-get update && \
+# 	apt-get install -y \
+# 		cifs-utils
 		
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
